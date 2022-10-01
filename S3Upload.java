@@ -42,6 +42,7 @@ public class S3Upload {
                     break;
                 }
             }
+            reader.close();
         } catch (IOException e) {
             System.out.println("Something went wrong");
         }
