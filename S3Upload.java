@@ -33,15 +33,19 @@ public class S3Upload {
         BufferedReader reader = null;
         String fileContents = "";
         try {
-            reader = new BufferedReader(new FileReader(
-                    "C:\\<FMI2>"));
-
+           // reader = new BufferedReader(new FileReader(
+             //       "C:\\<FMI2>"));
+            FileReader fr = new FileReader(
+                    "C:\\<FMI2>");
+            reader = new BufferedReader(fr);
+            
             while (true) {
                 fileContents += reader.readLine();
                 if (fileContents == null || fileContents.equals("")) {
                     break;
                 }
             }
+            fr.close();
             reader.close();
         } catch (IOException e) {
             System.out.println("Something went wrong");
